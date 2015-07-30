@@ -3,8 +3,10 @@
 var tape = require('tape');
 if (typeof(window)==='object') {
     var tape_dom = require('..');
-    tape_dom(tape);
+    tape_dom.installCSS();
+    tape_dom.stream(tape);
 }
+
 
 tape('trivial matches', function perfect_matches (tap) {
     tap.plan(5);

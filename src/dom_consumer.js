@@ -113,11 +113,6 @@ function assertFailDiv (row, assert_element) {
 
 }
 
-module.exports = function (tape) {
-    var stream = tape.createStream({ objectMode: true });
-    stream.on('data', add_some_dom);
-};
-
 
 var test_root = document.getElementById('tests') || document.body;
 var current_test = test_root;
@@ -138,3 +133,19 @@ function add_some_dom (row) {
         commentDiv(row, current_test);
     }
 }
+
+
+module.exports = {
+    stream: function (tape) {
+        var stream = tape.createStream({ objectMode: true });
+        stream.on('data', add_some_dom);
+    },
+    installCSS: function () {
+        var link = document.createElement('link');
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("href", 
+                "https://raw.githubusercontent.com/gritzko/tape-dom/master/tape.css");
+        link.setAttribute("type", "text/css");
+        document.head.appendChild(link);
+    }
+};
