@@ -66,7 +66,7 @@ p.assert.fail span.name {
     color: #555;
 }
 span.expected:before {
-    content: '≠';
+    content: '!=';
     padding-right: 1em;
 }
 span.line {
