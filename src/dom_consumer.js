@@ -1,6 +1,7 @@
 "use strict";
 var dmp = require('googlediff');
-var tape = require('tape');
+//var tape = require('tape');
+var tape_css = require('./tape_css');
 
 function html_diff (a, b) {
     var d = new dmp();
@@ -141,11 +142,10 @@ module.exports = {
         stream.on('data', add_some_dom);
     },
     installCSS: function () {
-        var link = document.createElement('link');
-        link.setAttribute("rel", "stylesheet");
-        link.setAttribute("href", 
-                "https://raw.githubusercontent.com/gritzko/tape-dom/master/tape.css");
+        var link = document.createElement('style');
         link.setAttribute("type", "text/css");
+        var css_body = document.createTextNode(tape_css);
+        link.appendChild(css_body);
         document.head.appendChild(link);
     }
 };
