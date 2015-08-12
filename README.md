@@ -1,5 +1,7 @@
 # DOM output formatter for tape tests
 
+![UI](tape-dom.png)
+
 Tape is an [NPM package](https://www.npmjs.com/package/tape) for
 making [Test Anything Protocol](https://testanything.org/) tests in node.js.
 Tape nicely runs in a browser using browserify or in a browser-based
