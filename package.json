@@ -1,6 +1,6 @@
 {
   "name": "tape-dom",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "http://github.com/gritzko/tape-dom",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "files": [
     "src/*.js",
-    "test/*.js",
+    "test/test.js",
     "test/index.html",
     "LICENSE",
     "README.md",
