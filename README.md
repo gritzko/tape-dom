@@ -2,7 +2,8 @@
 
 Tape is an [NPM package](https://www.npmjs.com/package/tape) for
 making [Test Anything Protocol](https://testanything.org/) tests in node.js.
-Tape nicely runs in a browser using browserify.
+Tape nicely runs in a browser using browserify or in a browser-based
+debugger like [IronNode](https://github.com/s-a/iron-node).
 
 This minimal package converts tape's TAP output to nicely formatted
 DOM.
