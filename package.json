@@ -1,10 +1,10 @@
 {
   "name": "tape-dom",
   "version": "0.0.6",
-  "homepage": "http://github.com/gritzko/swarm",
+  "homepage": "http://github.com/gritzko/tape-dom",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gritzko/swarm.git"
+    "url": "https://github.com/gritzko/tape-dom.git"
   },
   "author": {
     "email": "victor.grishchenko@gmail.com",
