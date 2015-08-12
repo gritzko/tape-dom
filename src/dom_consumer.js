@@ -26,7 +26,7 @@ function startTestDiv (row) {
 
     var name = document.createElement('P');
     name.setAttribute('class', 'name');
-    name.innerText = row.name;
+    name.appendChild(document.createTextNode(row.name));
     test_div.appendChild(name);
 
     current_test = test_div;
@@ -42,13 +42,13 @@ function assertDiv (row, root) {
 
     var ok = document.createElement('SPAN');
     ok.setAttribute('class', 'ok');
-    ok.innerText = row.ok ? 'OK' : 'FAIL';
+    ok.appendChild(document.createTextNode(row.ok ? 'OK' : 'FAIL'));
     p.appendChild(ok);
 
     if (row.name) {
         var nam = document.createElement('SPAN');
         nam.setAttribute('class', 'name');
-        nam.innerText = row.name;
+        nam.appendChild(document.createTextNode(row.name));
         p.appendChild(nam);
     }
     root.appendChild(p);
@@ -58,7 +58,7 @@ function assertDiv (row, root) {
 function commentDiv (row, root) {
     var p = document.createElement('P');
     p.setAttribute('class', 'comment');
-    p.innerText = row;
+    p.appendChild(document.createTextNode(row));
     root.appendChild(p);
     return p;
 }
@@ -66,7 +66,6 @@ function commentDiv (row, root) {
 function endDiv(row, current_test) {
     var p = document.createElement('P');
     p.setAttribute('class', 'end');
-    //p.innerText = row;
     current_test.appendChild(p);
     return p;
 }
@@ -83,12 +82,12 @@ function assertFailDiv (row, assert_element) {
 
     var actual_span = document.createElement('SPAN');
     actual_span.setAttribute('class', 'actual');
-    actual_span.innerText = actual;
+    actual_span.appendChild(document.createTextNode(actual));
     assert_element.appendChild(actual_span);
 
     var expected_span = document.createElement('SPAN');
     expected_span.setAttribute('class', 'expected');
-    expected_span.innerText = expected;
+    expected_span.appendChild(document.createTextNode(expected));
     assert_element.appendChild(expected_span);
 
     if (row.file) {
@@ -96,7 +95,7 @@ function assertFailDiv (row, assert_element) {
         line.setAttribute('class', 'line');
         var m = /\/([^\/]+)$/.exec(row.file);
         var file_line = m[1];
-        line.innerText = file_line;
+        line.appendChild(document.createTextNode(file_line));
         assert_element.appendChild(line);
         // this way the user may meaningfully navigate the code
         console.warn(row.error.stack);
