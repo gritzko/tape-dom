@@ -1,11 +1,13 @@
 "use strict";
-var dmp = require('googlediff');
+var DiffMatchPatch = require('googlediff');
+var dmp = new DiffMatchPatch();
 //var tape = require('tape');
 var tape_css = require('./tape_css');
 
+
 function html_diff (a, b) {
-    var d = new dmp();
-	var diff = d.diff_main(b, a);
+	var diff = dmp.diff_main(b, a);
+    dmp.diff_cleanupSemantic(diff);
 	var ret = '', tag;
 	diff.forEach(function(chunk){
 		switch (chunk[0]) {
