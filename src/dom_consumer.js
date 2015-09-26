@@ -54,6 +54,7 @@ function assertDiv (row, root) {
         p.appendChild(nam);
     }
     root.appendChild(p);
+    p.scrollIntoView({block: "end", behavior: "smooth"});
     return p;
 }
 
@@ -116,7 +117,12 @@ function assertFailDiv (row, assert_element) {
 }
 
 
-var test_root = document.getElementById('tests') || document.body;
+var test_root = document.getElementById('tests');
+if (!test_root) {
+    test_root = document.createElement('div');
+    test_root.setAttribute('id','tests');
+    document.body.appendChild(test_root);
+}
 var current_test = test_root;
 
 function add_some_dom (row) {
@@ -133,6 +139,8 @@ function add_some_dom (row) {
         current_test = current_test.parentNode;
     } else if (row.constructor===String) {
         commentDiv(row, current_test);
+    } else {
+        console.warn('tape-dom row', row.type, row);
     }
 }
 

@@ -1,6 +1,7 @@
 "use strict";
 module.exports =
-"div.test{width:100%;border-top:1px dotted grey;margin-top:1em;background:#eef;font-weight:700}"+
+"div.test{width:100%;border-top:1px dotted grey;margin-top:1em;background:#eef;font-weight:700;margin-bottom:1em}"+
+"div#tests{margin-bottom:5em}"+
 "p.assert{margin-top:0;margin-bottom:0;font-weight:400;width:100%}"+
 "p.assert.ok{background:#efe;color:grey}"+
 "p.assert.fail{background:#faa}"+

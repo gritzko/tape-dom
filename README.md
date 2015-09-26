@@ -1,9 +1,8 @@
 # DOM output formatter for tape tests
 
-This minimal package converts tape's TAP output to nicely formatted
-DOM.
+Convert tape's TAP output to nicely formatted DOM.
 
-![UI](https://github.com/gritzko/tape-dom/blob/master/tape-dom.png)
+![UI](http://github.com/gritzko/tape-dom/blob/master/tape-dom.png)
 
 Tape is an [NPM package](https://www.npmjs.com/package/tape) for
 making [Test Anything Protocol](https://testanything.org/) tests in node.js.
