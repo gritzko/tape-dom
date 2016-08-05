@@ -5,6 +5,8 @@ if (typeof(window)==='object') {
     var tape_dom = require('..');
     tape_dom.installCSS();
     tape_dom.stream(tape);
+    // This also works
+    // require('..')(tape)
 }
 
 

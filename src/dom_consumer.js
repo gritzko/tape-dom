@@ -144,17 +144,26 @@ function add_some_dom (row) {
     }
 }
 
+function stream (tape) {
+    var stream = tape.createStream({ objectMode: true });
+    stream.on('data', add_some_dom);
+}
 
-module.exports = {
-    stream: function (tape) {
-        var stream = tape.createStream({ objectMode: true });
-        stream.on('data', add_some_dom);
-    },
-    installCSS: function () {
-        var link = document.createElement('style');
-        link.setAttribute("type", "text/css");
-        var css_body = document.createTextNode(tape_css);
-        link.appendChild(css_body);
-        document.head.appendChild(link);
-    }
-};
+function installCSS () {
+    var link = document.createElement('style');
+    link.setAttribute("type", "text/css");
+    var css_body = document.createTextNode(tape_css);
+    link.appendChild(css_body);
+    document.head.appendChild(link);
+}
+
+function init (tape) {
+    installCSS();
+    stream(tape);
+    return init;
+}
+
+init.installCSS = installCSS;
+init.stream = stream;
+
+module.exports = init;
