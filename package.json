@@ -33,6 +33,6 @@
   },
   "scripts": {
     "pretest": "browserify test/test.js -o test/test-dist.js",
-    "test": "firefox test/index.html"
+    "test": "open test/index.html"
   }
 }
