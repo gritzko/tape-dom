@@ -12,14 +12,9 @@ debugger like [IronNode](https://github.com/s-a/iron-node).
 Isomorphic use:
 
     var tape = require('tape');
-
     // If DOM tree is available (browser, IronNode) then render
     // results to DOM. Otherwise, do nothing.
-    if (typeof(window)==='object') {
-        var tape_dom = require('tape-dom');
-        tape_dom.installCSS();
-        tape_dom.stream(tape);
-    }
+    require('tape-dom')(tape);
 
 Then `browserify my_js_test.js -o browserified_test.js`
 

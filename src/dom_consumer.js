@@ -116,14 +116,16 @@ function assertFailDiv (row, assert_element) {
 
 }
 
-
-var test_root = document.getElementById('tests');
-if (!test_root) {
-    test_root = document.createElement('div');
-    test_root.setAttribute('id','tests');
-    document.body.appendChild(test_root);
+var test_root, current_test;
+if (typeof(document)==='object') {
+    test_root = document.getElementById('tests');
+    if (!test_root) {
+        test_root = document.createElement('div');
+        test_root.setAttribute('id','tests');
+        document.body.appendChild(test_root);
+    }
+    current_test = test_root;
 }
-var current_test = test_root;
 
 function add_some_dom (row) {
     if (row.type==='test') {
@@ -158,8 +160,10 @@ function installCSS () {
 }
 
 function init (tape) {
-    installCSS();
-    stream(tape);
+    if (typeof(window)==='object') {
+        installCSS();
+        stream(tape);
+    }
     return init;
 }
 
