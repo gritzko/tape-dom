@@ -23,11 +23,11 @@
   "main": "src/dom_consumer.js",
   "browser": "src/dom_consumer.js",
   "dependencies": {
-      "googlediff": "^0.1.0",
-      "tap-parser": "^1.1.6"
+    "diff-match-patch": "^1.0.0",
+    "tap-parser": "^1.1.6"
   },
   "devDependencies": {
-    "browserify": "13.1.0",
+    "browserify": "13.1.0",    
     "tape": "^4.0.2",
     "tape-dom": "^0.0.4"
   },
